@@ -33,6 +33,3 @@ if ($pregunta3 != '') {
 
 $datos = "Datos guardados con exito";
 include_once 'agregar_preguntas.php';
-
-
-?>

@@ -9,4 +9,3 @@ mysqli_query($conn, "DELETE from areas where id_area = '$id_area'")
 
 mysqli_close($conn);
 include_once 'ver_area_departamento.php';
-?>

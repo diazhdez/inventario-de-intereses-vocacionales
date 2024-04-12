@@ -92,4 +92,3 @@ mysqli_close($conn);
 $datos1 = "Datos guardados con exito";
 header('location: Highcharts-7.1.2/index.php');
 
-?>

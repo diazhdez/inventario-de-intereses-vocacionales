@@ -136,11 +136,11 @@
             // Transform each point
             return points.map(function (point) {
                 var rotated = rotate3D(
-                        (inverted ? point.y : point.x) - origin.x,
-                        (inverted ? point.x : point.y) - origin.y,
-                        (point.z || 0) - origin.z,
-                        angles
-                    ),
+                    (inverted ? point.y : point.x) - origin.x,
+                    (inverted ? point.x : point.y) - origin.y,
+                    (point.z || 0) - origin.z,
+                    angles
+                ),
                     // Apply perspective
                     coordinate = H.perspective3D(rotated, origin, origin.vd);
 
@@ -295,13 +295,13 @@
             return [
                 'C',
                 cx + (rx * Math.cos(start)) -
-                    ((rx * dFactor * arcAngle) * Math.sin(start)) + dx,
+                ((rx * dFactor * arcAngle) * Math.sin(start)) + dx,
                 cy + (ry * Math.sin(start)) +
-                    ((ry * dFactor * arcAngle) * Math.cos(start)) + dy,
+                ((ry * dFactor * arcAngle) * Math.cos(start)) + dy,
                 cx + (rx * Math.cos(end)) +
-                    ((rx * dFactor * arcAngle) * Math.sin(end)) + dx,
+                ((rx * dFactor * arcAngle) * Math.sin(end)) + dx,
                 cy + (ry * Math.sin(end)) -
-                    ((ry * dFactor * arcAngle) * Math.cos(end)) + dy,
+                ((ry * dFactor * arcAngle) * Math.cos(end)) + dy,
 
                 cx + (rx * Math.cos(end)) + dx,
                 cy + (ry * Math.sin(end)) + dy
@@ -794,8 +794,8 @@
 
             zIndex += incrementY * (
                 !isTop ||
-                // Numbers checked empirically
-                (alpha >= 0 && alpha <= 180 || alpha < 360 && alpha > 357.5) ?
+                    // Numbers checked empirically
+                    (alpha >= 0 && alpha <= 180 || alpha < 360 && alpha > 357.5) ?
                     chart.plotHeight - y : 10 + y
             );
 
@@ -1136,7 +1136,7 @@
                 // Go back to the left edge
                 out = out.concat(curveTo(cx, cy, rx, ry, midEnd, end2, 0, 0));
 
-            // But shape can cross also only (c) edge:
+                // But shape can cross also only (c) edge:
             } else if (end > PI - a && start < PI - a) {
                 // Go to outer side
                 out = out.concat([
@@ -1601,10 +1601,10 @@
                     tagName: 'style',
                     textContent:
                         '.highcharts-3d-top{' +
-                            'filter: url(#highcharts-brighter)' +
+                        'filter: url(#highcharts-brighter)' +
                         '}\n' +
                         '.highcharts-3d-side{' +
-                            'filter: url(#highcharts-darker)' +
+                        'filter: url(#highcharts-darker)' +
                         '}\n'
                 });
 
@@ -2925,7 +2925,7 @@
             var interpolated;
 
             if (this.pos < 1 &&
-                    (H.isArray(this.start) || H.isArray(this.end))) {
+                (H.isArray(this.start) || H.isArray(this.end))) {
                 var start = this.start || [1, 0, 0, 1, 0, 0];
                 var end = this.end || [1, 0, 0, 1, 0, 0];
 
@@ -3797,7 +3797,7 @@
                 false;
         });
 
-        seriesTypes.column.prototype.translate3dPoints = function () {};
+        seriesTypes.column.prototype.translate3dPoints = function () { };
         seriesTypes.column.prototype.translate3dShapes = function () {
 
             var series = this,
@@ -4366,7 +4366,7 @@
                             markerGroup.attr(attribs);
                         }
 
-                    // Run the animation
+                        // Run the animation
                     } else {
                         attribs = {
                             translateX: group.oldtranslateX,
@@ -4432,39 +4432,39 @@
                     pointFormat: 'x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>z: <b>{point.z}</b><br/>'
                 }
 
-            // Series class
+                // Series class
             }, {
-                pointAttribs: function (point) {
-                    var attribs = seriesTypes.scatter.prototype.pointAttribs
-                        .apply(this, arguments);
+            pointAttribs: function (point) {
+                var attribs = seriesTypes.scatter.prototype.pointAttribs
+                    .apply(this, arguments);
 
-                    if (this.chart.is3d() && point) {
-                        attribs.zIndex = H.pointCameraDistance(point, this.chart);
-                    }
-
-                    return attribs;
-                },
-                axisTypes: ['xAxis', 'yAxis', 'zAxis'],
-                pointArrayMap: ['x', 'y', 'z'],
-                parallelArrays: ['x', 'y', 'z'],
-
-                // Require direct touch rather than using the k-d-tree, because the
-                // k-d-tree currently doesn't take the xyz coordinate system into
-                // account (#4552)
-                directTouch: true
-
-            // Point class
-            }, {
-                applyOptions: function () {
-                    Point.prototype.applyOptions.apply(this, arguments);
-                    if (this.z === undefined) {
-                        this.z = 0;
-                    }
-
-                    return this;
+                if (this.chart.is3d() && point) {
+                    attribs.zIndex = H.pointCameraDistance(point, this.chart);
                 }
 
+                return attribs;
+            },
+            axisTypes: ['xAxis', 'yAxis', 'zAxis'],
+            pointArrayMap: ['x', 'y', 'z'],
+            parallelArrays: ['x', 'y', 'z'],
+
+            // Require direct touch rather than using the k-d-tree, because the
+            // k-d-tree currently doesn't take the xyz coordinate system into
+            // account (#4552)
+            directTouch: true
+
+            // Point class
+        }, {
+            applyOptions: function () {
+                Point.prototype.applyOptions.apply(this, arguments);
+                if (this.z === undefined) {
+                    this.z = 0;
+                }
+
+                return this;
             }
+
+        }
         );
 
 

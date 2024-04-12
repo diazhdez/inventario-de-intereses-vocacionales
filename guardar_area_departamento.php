@@ -27,7 +27,3 @@ if ($area == 'Area') {
     $datos = "Datos guardados con exito";
     include_once 'alta_area_departamento.php';
 }
-
-
-
-?>

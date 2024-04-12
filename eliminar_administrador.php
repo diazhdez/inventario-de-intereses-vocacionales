@@ -8,4 +8,3 @@ mysqli_query($conn, "DELETE from jefes where id_jefes = '$id_je'")
 
 mysqli_close($conn);
 include_once 'buscador.php';
-?>

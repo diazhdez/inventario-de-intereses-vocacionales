@@ -30,7 +30,6 @@ a {
 .menu {
 	opacity: .75;
 	width: 100%;
-
 }
 
 .menu li a {
@@ -54,7 +53,6 @@ a {
 .menu li a:hover {
 	background: white;
 	color: black;
-
 }
 
 .boton:hover {

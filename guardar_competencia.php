@@ -20,6 +20,3 @@ mysqli_close($conn);
 
 $datos3 = "Datos guardados con exito";
 include_once 'agregar_encuesta.php';
-
-
-?>

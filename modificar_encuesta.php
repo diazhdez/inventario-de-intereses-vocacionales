@@ -8,7 +8,7 @@ if (isset($_SESSION['correo'])) {
 
 $hora = new DateTime("now", new DateTimeZone('America/Mexico_City'));
 
-date_default_timezone_get('America/Mexico_City');
+date_default_timezone_set('America/Mexico_City');
 $fecha = date("m/d/y");
 //AGREGAS S para segundos
 $fechayhora = $fecha . " " . $hora->format('H:i:s');

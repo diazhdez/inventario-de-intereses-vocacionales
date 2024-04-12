@@ -6,7 +6,7 @@ $id_jefes = $_GET['id_jefes'];
 
 error_reporting(1);
 $hora = new DateTime("now", new DateTimeZone('America/Mexico_City'));
-date_default_timezone_get('America/Mexico_City');
+date_default_timezone_set('America/Mexico_City');
 $fecha = date("m/d/y ");
 $fechahora = $fecha . "-" . $hora->format('H:i:s');
 
@@ -66,7 +66,6 @@ while ($row = $resultado->fetch_assoc()) {
 	$pdf->Cell(60, 6, utf8_decode($row['institucion']), 1, 0, 'C');
 	$pdf->Cell(20, 6, ($row['correo']), 1, 0, 'C');
 	$pdf->Cell(30, 6, utf8_decode($fechahora), 1, 1, 'C');
-
 }
 $query = "SELECT * FROM jefes WHERE id_jefes = '$id_jefes'";
 

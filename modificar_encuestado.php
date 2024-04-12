@@ -28,4 +28,3 @@ if ($resultado > 0) {
 } else {
   echo "ocurrio un error";
 }
-?>

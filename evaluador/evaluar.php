@@ -5,7 +5,7 @@ extract($_GET);
 extract($_SESSION);
 error_reporting(1);
 $hora = new DateTime("now", new DateTimeZone('America/Mexico_City'));
-date_default_timezone_get('America/Mexico_City');
+date_default_timezone_set('America/Mexico_City');
 $fecha = date("d/m/y");
 $fechayhora = $fecha . "-" . $hora->format('G:i');
 

@@ -18,5 +18,3 @@ echo $row_cnt3;
 $consulta4 = mysqli_query($mysqli, "SELECT * FROM respuestas WHERE id_jefes ='$id_jefes' AND carrera = 'Desarrollo de negocios'");
 $row_cnt4 = $consulta4->num_rows;
 echo $row_cnt4;
-
-?>

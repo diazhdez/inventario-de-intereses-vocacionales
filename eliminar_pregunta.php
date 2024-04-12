@@ -8,4 +8,3 @@ mysqli_query($conn, "DELETE from preguntas where id_pregunta = '$id_pregunta'")
 
 mysqli_close($conn);
 include_once "agregar_preguntas.php";
-?>

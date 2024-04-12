@@ -29,7 +29,6 @@ a {
 }
 
 .menu li a {
-
 	color: white;
 	display: block;
 	padding: 10px 10px;
@@ -43,13 +42,11 @@ a {
 .menu :hover {
 	background: #76ff03;
 	color: white;
-
 }
 
 .menu li a:hover {
 	background: white;
 	color: black;
-
 }
 
 .menu .icono {
@@ -64,7 +61,7 @@ a {
 
 .menu .icono .derecha {
 	float: right;
-	margin-left: : 10px;
+	margin-left: 10px;
 }
 
 .menu ul li a {
@@ -73,7 +70,8 @@ a {
 }
 
 .menu .active>a {
-	background: black color:white;
+	background: black;
+	color: white;
 }
 
 .boton:hover {

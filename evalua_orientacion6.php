@@ -56,4 +56,3 @@ mysqli_close($conn);
 $datos1 = "Datos guardados con exito";
 include_once 'encuestab7.php';
 
-?>

@@ -73,7 +73,7 @@ echo " <br> coincide con la fecha de hoy";
           </a>
 
         </div>
-      <?php
+        <?php
       }
       if (strtotime($datos['fecha_final']) == time()) {
 

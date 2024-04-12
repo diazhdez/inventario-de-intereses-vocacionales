@@ -26,5 +26,3 @@ mysqli_close($conn);
 
 $datos1 = "Datos guardados con exito";
 include_once 'administrador.php';
-
-?>
